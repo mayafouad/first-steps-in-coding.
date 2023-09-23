@@ -4,7 +4,7 @@
 #define el "\n"
 #define testcase int t; cin>>t; while(t--)
 using namespace std;
- 
+
 class Water{
     private:
         int c = 1;
@@ -186,6 +186,14 @@ void money(int b, int p){ //b --> اللي فلوس اللي دخلت، p --> ا
     if(x) cout << x << " pounds backs to you." << endl;
     
 }
+void Not_avialable(){
+    cout << "Sorry, this product isn't available currently,"<< endl;
+    cout <<  "enter another product code or press 0 to return the money." << endl;
+}
+void Less(){
+    cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+    
+}
 void work(int code, int cash){
     switch (code)
     {
@@ -206,11 +214,9 @@ void work(int code, int cash){
             money(cash, x.Water_price()); x.buy();
         }
         else if(x.get_Water()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
-        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{ Less();
+            ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 2:{
         Cola x; 
@@ -218,10 +224,8 @@ void work(int code, int cash){
             money(cash, x.cola_price()); x.buy();
         }
         else if(x.get_Cola()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 3:{
@@ -230,10 +234,8 @@ void work(int code, int cash){
             money(cash, x.pepsi_price()); x.buy();
         }
         else if(x.get_Pepsi()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 4:{
@@ -242,10 +244,8 @@ void work(int code, int cash){
             money(cash, x.chips_price()); x.buy();
         }
         else if(x.get_Chips()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 5:{
@@ -254,10 +254,8 @@ void work(int code, int cash){
             money(cash, x.pringles_price()); x.buy();
         }
         else if(x.get_Pringles()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash);}
         break;}
     case 6:{
@@ -266,10 +264,8 @@ void work(int code, int cash){
             money(cash, x.marsh_price()); x.buy();
         }
         else if(x.get_Marshmallow()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 7:{
@@ -278,10 +274,8 @@ void work(int code, int cash){
             money(cash, x.choco_price()); x.buy();
         }
         else if(x.get_Chocolate()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 8:{
@@ -290,10 +284,8 @@ void work(int code, int cash){
             money(cash, x.doritos_price()); x.buy();
         }
         else if(x.get_Doritos()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 9:{
@@ -302,10 +294,8 @@ void work(int code, int cash){
             money(cash, x.ice_price()); x.buy();
         }
         else if(x.get_Ice_Coffee()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
         break;}
     case 10:{
@@ -314,10 +304,8 @@ void work(int code, int cash){
             money(cash, x.milk_price()); x.buy();
         }
         else if(x.get_Strawberry_milk()==0){
-            cout << "Sorry, this product isn't available currently,"<< endl;
-            cout <<  "enter another product code or press 0 to return the money." << endl;
-            ll y; cin >> y; work(y,0);}
-        else{cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
         ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash);}
         break;}
     default:
