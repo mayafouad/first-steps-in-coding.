@@ -1,0 +1,207 @@
+#include <bits/stdc++.h>
+#include "Vending_Machine.h"
+#define ll long long 
+#define fast() ios_base::sync_with_stdio(false),cin.tie(NULL);
+#define el "\n"
+#define testcase int t; cin>>t; while(t--)
+using namespace std;
+
+
+ll arr[5] = {1, 5, 10, 20, 50};
+ll frec[5] = {1, 1, 1, 1, 1};
+void money(int b, int p){ //b --> اللي فلوس اللي دخلت، p --> السعر 
+    ll r =b-p;
+    ll x=r;
+    for(ll i=4; i>=0; i--){
+            if(arr[i]<=b){
+                frec[i]+=(b/arr[i]);
+                b=b%arr[i];
+            }
+    } for(ll i=4; i>=0; i--){
+            if(arr[i]<=r ){
+                frec[i]-=(r/arr[i]);
+                r=r%arr[i];
+            }
+    } cout << "Done" << endl;
+    if(x) cout << x << " pounds backs to you." << endl;
+    
+}
+
+void Not_avialable(){
+    cout << "Sorry, this product isn't available currently,"<< endl;
+    cout <<  "enter another product code or press 0 to return the money." << endl;
+}
+
+void Less(){
+    cout << "Sorry, please enter the full value of the product, or press 0 to return the money." << endl;
+    
+}
+
+void work(int code, int cash){
+    switch (code)
+    {
+    case 0:{
+        ll x=cash;
+    for(ll i=4; i>=0; i--){
+            if(arr[i]<=cash ){
+                frec[i]-=(cash/arr[i]);
+                cash=cash%arr[i];
+            }
+    }
+    cout << x << " pounds backs to you." << endl;
+    break;
+    }
+    case 1:{
+        Water x; 
+        if(x.get_Water()>0 && x.Water_price() <= cash){
+            money(cash, x.Water_price()); x.buy();
+        }
+        else if(x.get_Water()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{ Less();
+            ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 2:{
+        Cola x; 
+        if(x.get_Cola()>0 && x.cola_price() <=  cash){
+            money(cash, x.cola_price()); x.buy();
+        }
+        else if(x.get_Cola()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 3:{
+        Pepsi x; 
+        if(x.get_Pepsi()>0 && x.pepsi_price() <=  cash){
+            money(cash, x.pepsi_price()); x.buy();
+        }
+        else if(x.get_Pepsi()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 4:{
+        Chips x; 
+        if(x.get_Chips()>0 && x.chips_price() <=  cash){
+            money(cash, x.chips_price()); x.buy();
+        }
+        else if(x.get_Chips()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 5:{
+        Pringles x; 
+        if(x.get_Pringles()>0 && x.pringles_price() <=  cash){
+            money(cash, x.pringles_price()); x.buy();
+        }
+        else if(x.get_Pringles()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash);}
+        break;}
+    case 6:{
+        Marshmallow x; 
+        if(x.get_Marshmallow()>0 && x.marsh_price()<=  cash){
+            money(cash, x.marsh_price()); x.buy();
+        }
+        else if(x.get_Marshmallow()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 7:{
+        Chocolate x; 
+        if(x.get_Chocolate()>0 && x.choco_price()<=  cash){
+            money(cash, x.choco_price()); x.buy();
+        }
+        else if(x.get_Chocolate()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 8:{
+        Doritos x; 
+        if(x.get_Doritos()>0 && x.doritos_price() <=  cash){
+            money(cash, x.doritos_price()); x.buy();
+        }
+        else if(x.get_Doritos()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 9:{
+        Ice_Coffee x; 
+        if(x.get_Ice_Coffee()>0 && x.ice_price() <=  cash){
+            money(cash, x.ice_price()); x.buy();
+        }
+        else if(x.get_Ice_Coffee()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash); }
+        break;}
+    case 10:{
+        Strawberry_milk x; 
+        if(x.get_Strawberry_milk()>0 && x.milk_price() <=  cash){
+            money(cash, x.milk_price()); x.buy();
+        }
+        else if(x.get_Strawberry_milk()==0){
+            Not_avialable(); ll y; cin >> y; work(y,0);}
+        else{Less();
+        ll y; cin >> y; if(y) work(code, cash+y); else work(y,cash);}
+        break;}
+    default:
+        break;
+    }
+    
+}
+
+void intro(){
+    ll sum =0;
+    for(ll i=0; i<5; i++){
+        sum+=(arr[i]*frec[i]);
+    }
+    cout << "Hello, there are:" << endl;
+    cout << "1. Water {3 E.P}" << endl;
+    cout << "2. Cola {5 E.P}" << endl;
+    cout << "3. Pepsi {5 E.P}" << endl;
+    cout << "4. Chips {6 E.P}" << endl;
+    cout << "5. Pringles {15 E.P}" << endl;
+    cout << "6. Marshmallow {7 E.P}" << endl;
+    cout << "7. Chocolate {10 E.P}" << endl;
+    cout << "8. Doritos {6 E.P}" << endl;
+    cout << "9. Ice Coffee {10 E.P}" << endl;
+    cout << "10. Strawberry milk {10 E.P}" << endl;
+    cout << "There are " << sum << " pounds only. " << endl; 
+    cout << "Please enter product code and money. " << endl;
+   
+}
+
+int check(){
+int f =0;
+Water k; f+=k.get_Water();
+Chips kk; f+=kk.get_Chips();
+Pepsi kl; f+=kl.get_Pepsi();
+Cola jj; f+=jj.get_Cola();
+Doritos jjk; f+=jjk.get_Doritos();
+Pringles ii; f+=ii.get_Pringles();
+Marshmallow kii; f+=kii.get_Marshmallow();
+Chocolate ik; f+=ik.get_Chocolate();
+Ice_Coffee oo; f+=oo.get_Ice_Coffee();
+Strawberry_milk ko; f+=ko.get_Strawberry_milk();
+    return f;
+}
+
+int main(){
+
+    fast();
+
+    do{
+    intro();
+    ll co, mo; cin >> co >> mo;
+    work(co, mo);
+    }while(check());
+    if(!check()){cout << "Sorry, there aren't available products. " << endl; }
+   
+ }   
