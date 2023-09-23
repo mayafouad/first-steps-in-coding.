@@ -4,7 +4,7 @@
 #define el "\n"
 #define testcase int t; cin>>t; while(t--)
 using namespace std;
-
+ 
 class Water{
     private:
         int c = 1;
