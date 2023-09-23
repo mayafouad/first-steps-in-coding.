@@ -4,6 +4,7 @@
 #define el "\n"
 #define testcase int t; cin>>t; while(t--)
 using namespace std;
+
 vector <string> v;
 void intro(){
     cout << "-------------------------------------------" << endl;
