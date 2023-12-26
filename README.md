@@ -3,4 +3,4 @@
 1. Tic-tac-toe game.
 2. To Do List.
 3. Vending Machine.
-4. Game Of Live.
+4. Game Of Life.
